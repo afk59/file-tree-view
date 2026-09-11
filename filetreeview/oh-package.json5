@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Lazy-loading, file-system-backed tree panel for HarmonyOS NEXT PC/2-in-1.",
   "main": "Index.ets",
-  "author": "afk59",
+  "author": {
+    "name": "afk59",
+    "url": "https://github.com/afk59"
+  },
   "license": "Apache-2.0",
   "keywords": [
     "filetree",
