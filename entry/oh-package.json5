@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Demo app for the filetreeview component.",
   "main": "",
-  "author": "afk59",
+  "author": "Ahmet Faruk Karakus",
   "license": "Apache-2.0",
   "dependencies": {
     "file-tree-view": "file:../filetreeview"

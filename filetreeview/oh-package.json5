@@ -4,7 +4,7 @@
   "description": "Lazy-loading, file-system-backed tree panel for HarmonyOS NEXT PC/2-in-1.",
   "main": "Index.ets",
   "author": {
-    "name": "afk59",
+    "name": "Ahmet Faruk Karakus",
     "url": "https://github.com/afk59"
   },
   "license": "Apache-2.0",
