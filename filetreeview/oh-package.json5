@@ -8,6 +8,7 @@
     "url": "https://github.com/afk59"
   },
   "license": "Apache-2.0",
+  "repository": "https://github.com/afk59/file-tree-view.git",
   "keywords": [
     "filetree",
     "treeview",
