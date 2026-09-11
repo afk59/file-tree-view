@@ -1,0 +1,17 @@
+{
+  "name": "@afk35/filetreeview",
+  "version": "1.0.0",
+  "description": "Lazy-loading, file-system-backed tree panel for HarmonyOS NEXT PC/2-in-1.",
+  "main": "Index.ets",
+  "author": "afk35",
+  "license": "Apache-2.0",
+  "keywords": [
+    "filetree",
+    "treeview",
+    "file-manager",
+    "lazy-load",
+    "arkui",
+    "2in1"
+  ],
+  "dependencies": {}
+}

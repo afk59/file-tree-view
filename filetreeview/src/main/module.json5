@@ -1,0 +1,12 @@
+{
+  "module": {
+    "name": "filetreeview",
+    "type": "har",
+    // A HAR narrower than its consuming HAP fails at the first build for that device type, so
+    // both supported form factors are listed here.
+    "deviceTypes": [
+      "2in1",
+      "tablet"
+    ]
+  }
+}

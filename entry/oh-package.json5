@@ -1,0 +1,12 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Demo app for the filetreeview component.",
+  "main": "",
+  "author": "afk35",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@afk35/filetreeview": "file:../filetreeview"
+  }
+}
+

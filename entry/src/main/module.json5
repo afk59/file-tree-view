@@ -1,0 +1,124 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "2in1",
+      "tablet"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    // Reading the pre-authorized user directories still needs a user_grant permission: the
+    // Environment APIs return the path without one, but fileIo.listFile() on that path fails
+    // with 13900001 "Operation not permitted" until these are granted.
+    //
+    // READ_WRITE_DESKTOP_DIRECTORY is system_basic, i.e. restricted. It must appear in the
+    // signing profile's allowed-acls or the INSTALL is rejected outright:
+    //   code:9568289 install failed due to grant request permissions failed.
+    //   PermissionName: ohos.permission.READ_WRITE_DESKTOP_DIRECTORY
+    // The declaration has to exist BEFORE signing, because the signature generator reads this
+    // list and requests the restricted permissions at that moment. If a build fails to install
+    // with the code above, the profile has no ACL yet: re-run File > Project Structure >
+    // Signing Configs > Automatically generate signature.
+    "requestPermissions": [
+      // Full-disk access, off by default. To enable, uncomment the block below and re-sign.
+      //   * It is restricted (system_basic), so the signing profile needs an ACL. Declared
+      //     without one, installation is rejected outright — code:9568289 ... PermissionName:
+      //     ohos.permission.ACCESS_USER_FULL_DISK — and the app then installs nowhere, so a
+      //     failed ACL request costs the whole build rather than one feature.
+      //   * Review is documented as "within three working days", unlike
+      //     READ_WRITE_DESKTOP_DIRECTORY, which is approved immediately.
+      //   * Authorization is manual_settings: no runtime dialog. The user enables it in
+      //     Settings; StorageAccess.openFullDiskSetting() is the button that takes them there.
+      //   * Supported devices: PC/2-in-1 only. Elsewhere expect PermissionStatus.INVALID, and
+      //     the "Full disk…" button stays hidden.
+      // {
+      //   "name": "ohos.permission.ACCESS_USER_FULL_DISK",
+      //   "reason": "$string:reason_full_disk",
+      //   "usedScene": { "abilities": ["EntryAbility"], "when": "inuse" }
+      // },
+      {
+        // Keeps a folder the user picked usable after the app restarts. `normal` +
+        // `system_grant` since API 12: declaring it is all that is needed — no ACL, no review,
+        // no runtime dialog. Used by fileShare.persistPermission / activatePermission.
+        "name": "ohos.permission.FILE_ACCESS_PERSIST",
+        "reason": "$string:reason_persist_access",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.READ_WRITE_DESKTOP_DIRECTORY",
+        "reason": "$string:reason_desktop_dir",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.READ_WRITE_DOCUMENTS_DIRECTORY",
+        "reason": "$string:reason_documents_dir",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.READ_WRITE_DOWNLOAD_DIRECTORY",
+        "reason": "$string:reason_download_dir",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "inuse"
+        }
+      }
+    ],
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "ohos.want.action.home"
+            ]
+          }
+        ]
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "EntryBackupAbility",
+        "srcEntry": "./ets/entrybackupability/EntryBackupAbility.ets",
+        "type": "backup",
+        "exported": false,
+        "metadata": [
+          {
+            "name": "ohos.extension.backup",
+            "resource": "$profile:backup_config"
+          }
+        ],
+      }
+    ]
+  }
+}
