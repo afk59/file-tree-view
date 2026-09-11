@@ -1,5 +1,5 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { DefaultFileTreeDataSource, FileNode } from '@afk35/filetreeview';
+import { DefaultFileTreeDataSource, FileNode } from 'file-tree-view';
 
 const DOMAIN: number = 0x0000;
 const TAG: string = 'FileTreeProbe';

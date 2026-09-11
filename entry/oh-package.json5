@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Demo app for the filetreeview component.",
   "main": "",
-  "author": "afk35",
+  "author": "afk59",
   "license": "Apache-2.0",
   "dependencies": {
-    "@afk35/filetreeview": "file:../filetreeview"
+    "file-tree-view": "file:../filetreeview"
   }
 }
 

@@ -1,4 +1,4 @@
-# @afk35/filetreeview
+# file-tree-view
 
 A lazy-loading file tree for HarmonyOS NEXT, bound to the real device file system.
 
@@ -22,13 +22,13 @@ storage access that device grants.
 ## Installation
 
 ```bash
-ohpm i @afk35/filetreeview
+ohpm i file-tree-view
 ```
 
 ## Quick start
 
 ```ets
-import { FileTreeView, FileNode } from '@afk35/filetreeview';
+import { FileTreeView, FileNode } from 'file-tree-view';
 
 @Entry
 @Component
@@ -80,7 +80,7 @@ Declare in your HAP's `module.json5`:
 Then request them at runtime before the tree is built:
 
 ```ets
-import { requestUserDirPermissions, UserDirPermissionResult } from '@afk35/filetreeview';
+import { requestUserDirPermissions, UserDirPermissionResult } from 'file-tree-view';
 
 const result: UserDirPermissionResult =
   await requestUserDirPermissions(this.getUIContext().getHostContext() as common.UIAbilityContext);
@@ -121,7 +121,7 @@ Where the pre-authorized directories are not enough, the user can grant a folder
 needs no `user_grant` permission and shows no permission dialog — the pick *is* the grant.
 
 ```ets
-import { isFolderSelectionSupported, pickFolders, PickedRoot } from '@afk35/filetreeview';
+import { isFolderSelectionSupported, pickFolders, PickedRoot } from 'file-tree-view';
 
 if (isFolderSelectionSupported()) {
   const picked: PickedRoot[] = await pickFolders(context);

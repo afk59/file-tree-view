@@ -2,17 +2,17 @@
 
 A lazy-loading file tree for HarmonyOS NEXT, bound to the real device file system.
 
-[![ohpm](https://img.shields.io/badge/ohpm-%40afk35%2Ffiletreeview-blue)](https://ohpm.openharmony.cn/#/en/detail/@afk35%2Ffiletreeview)
+[![ohpm](https://img.shields.io/badge/ohpm-file--tree--view-blue)](https://ohpm.openharmony.cn/#/en/detail/file-tree-view)
 
 ```bash
-ohpm i @afk35/filetreeview
+ohpm i file-tree-view
 ```
 
 This repository holds the published library and a demo app that consumes it.
 
 | Module | What it is |
 |---|---|
-| [`filetreeview/`](filetreeview) | The reusable HAR library — the component itself. Published to OHPM as `@afk35/filetreeview`. |
+| [`filetreeview/`](filetreeview) | The reusable HAR library — the component itself. Published to OHPM as `file-tree-view`. |
 | [`entry/`](entry) | A demo app: a tree panel on the left, file details on the right, plus the buttons that exercise every access route. |
 
 **The full API and permission documentation lives in

@@ -1,4 +1,4 @@
-# @afk35/filetreeview
+# file-tree-view
 
 鸿蒙 NEXT 的懒加载文件树组件，直接绑定设备真实文件系统。
 
@@ -17,13 +17,13 @@
 ## 安装
 
 ```bash
-ohpm i @afk35/filetreeview
+ohpm i file-tree-view
 ```
 
 ## 快速开始
 
 ```ets
-import { FileTreeView, FileNode } from '@afk35/filetreeview';
+import { FileTreeView, FileNode } from 'file-tree-view';
 
 @Entry
 @Component
@@ -72,7 +72,7 @@ struct Index {
 然后在构建树之前于运行时申请：
 
 ```ets
-import { requestUserDirPermissions, UserDirPermissionResult } from '@afk35/filetreeview';
+import { requestUserDirPermissions, UserDirPermissionResult } from 'file-tree-view';
 
 const result: UserDirPermissionResult =
   await requestUserDirPermissions(this.getUIContext().getHostContext() as common.UIAbilityContext);
@@ -110,7 +110,7 @@ Desktop 会出现在 `unusable` 中，另外两个照常弹窗。
 用户的选择本身就是授权。
 
 ```ets
-import { isFolderSelectionSupported, pickFolders, PickedRoot } from '@afk35/filetreeview';
+import { isFolderSelectionSupported, pickFolders, PickedRoot } from 'file-tree-view';
 
 if (isFolderSelectionSupported()) {
   const picked: PickedRoot[] = await pickFolders(context);

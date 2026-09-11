@@ -1,7 +1,7 @@
 {
   "app": {
-    "bundleName": "com.afk35.filetreeviewdemo",
-    "vendor": "afk35",
+    "bundleName": "io.github.afk59.filetreeviewdemo",
+    "vendor": "afk59",
     "versionCode": 1000000,
     "versionName": "1.0.0",
     "icon": "$media:layered_image",

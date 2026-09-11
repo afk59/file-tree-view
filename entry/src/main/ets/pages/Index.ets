@@ -15,7 +15,7 @@ import {
   pickFolders,
   requestUserDirPermissions,
   UserDirPermissionResult
-} from '@afk35/filetreeview';
+} from 'file-tree-view';
 import { runDataSourceProbe } from '../probe/DataSourceProbe';
 import { PickedRootStore } from '../store/PickedRootStore';
 
